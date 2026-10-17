@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+# shell scripts must keep LF, otherwise the shebang breaks on device
+*.sh   text eol=lf
+files/* text eol=lf
+debian/* text eol=lf
+
+*.txt  text eol=lf
+*.md   text eol=lf
+
+*.deb  binary
