@@ -48,11 +48,41 @@ exec "$NODE_BIN" $V8_FLAGS "$@"
 
 ## 安装
 
-### Sileo / Filza
+### 通过 APT 源（推荐）
+
+源地址：
+
+```
+https://maslch957.github.io/nodejs-npm-roothide/
+```
+
+**Sileo**：`源` → `+` → 粘贴上面地址 → 添加后搜索 `Node.js + npm (roothide)`。
+
+**命令行**：
+
+```sh
+# 1. 导入签名公钥
+curl -fsSL https://maslch957.github.io/nodejs-npm-roothide/key.asc \
+  -o /etc/apt/trusted.gpg.d/nodejs-npm-roothide.asc
+
+# 2. 添加源
+echo 'deb [signed-by=/etc/apt/trusted.gpg.d/nodejs-npm-roothide.asc] https://maslch957.github.io/nodejs-npm-roothide/ ./' \
+  > /etc/apt/sources.list.d/nodejs-npm-roothide.list
+
+# 3. 安装
+apt update
+apt install com.maslch.nodejs-npm
+```
+
+签名公钥指纹：`8DF5 053C B022 0986 4265 425E 7CA2 03CF 6711 09F3`
+
+> 若不想导入公钥，也可以把源写成 `deb [trusted=yes] ...`，apt 会跳过签名校验（不推荐）。
+
+### Sileo / Filza（手动装 deb）
 
 下载 Releases 里的 `.deb`，用 Sileo 打开安装即可。
 
-### 命令行
+### 命令行（手动装 deb）
 
 ```sh
 dpkg -i nodejs-npm_18.20.4-1_iphoneos-arm64e.deb
@@ -125,6 +155,35 @@ VERSION=18.20.4-1 sh build.sh
 `dpkg-deb` 自带 zlib/lzma 支持，**不需要**设备上有 `gzip` 或 `xz` 二进制。
 
 `--root-owner-group` 参数不能省，否则从 `/usr/local` 复制来的文件会带着 `501/mobile` 属主进包。
+
+---
+
+## 仓库维护
+
+`docs/` 就是 GitHub Pages 的站点根目录，也就是这个 APT 源本身：
+
+```
+docs/
+├── Packages / Packages.gz   索引
+├── Release                  元数据 + 校验和
+├── InRelease                Release 的 clearsign 版本
+├── Release.gpg              Release 的分离签名
+├── key.gpg / key.asc        公钥
+└── *.deb                    包本体
+```
+
+发布新版本时：
+
+```sh
+python tools/build-repo.py \
+    --deb dist/nodejs-npm_<version>_iphoneos-arm64e.deb \
+    --out docs \
+    --key /path/to/private-key.asc
+```
+
+脚本会重新生成索引、算校验和、签名，全程不依赖 `dpkg-scanpackages` 或 `gpg`（用纯 Python 的 pgpy 实现）。
+
+> **签名私钥不在本仓库内。** 它是 `8DF5053CB02209864265425E7CA203CF671109F3` 对应的私钥，请自行离线备份。丢失后旧版本客户端会因公钥变更而报错，需要重新导入 `key.asc`。
 
 ---
 
