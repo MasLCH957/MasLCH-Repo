@@ -1,4 +1,5 @@
 dist/
 *.deb
+!docs/*.deb
 .DS_Store
 Thumbs.db
