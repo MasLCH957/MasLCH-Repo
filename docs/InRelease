@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Origin: MasLCH957
+Label: MasLCH Repo
+Suite: stable
+Codename: ios
+Version: 1.0
+Architectures: iphoneos-arm64e
+Components: main
+Description: MasLCH957's personal jailbreak packages
+Date: Sat, 17 Oct 2026 12:15:06 GMT
+MD5Sum:
+ 16d2cd2db5392a91531f4a3b47f87e4b             1115 Packages
+ 2f954eeb4e05e1b07edcafa7f2989bd5              687 Packages.gz
+SHA1:
+ 8e89cce9fc5172fb08565a51377452a865cb2361             1115 Packages
+ 2a58feb563c710ef9aca18da098964d87e96075d              687 Packages.gz
+SHA256:
+ 6f7ca4fbf52d093b2a56094c2a5df0c3547609ab0877b654fc4f64050f939ef3             1115 Packages
+ f744e177e7433d8d9cd201b10eb773a25f5c7c65cbbff4b4882ade51214ccc28              687 Packages.gz
+
+-----BEGIN PGP SIGNATURE-----
+
+wsDzBAEBCAAdBQJq02bKFiEEjfUFPLAiCYZCZUJefKIDz2cRCfMACgkQfKIDz2cR
+CfNA6gwAqt+LexqXJf2giSpU+G7UNdQSS+ISYqFGc811T0wdeg6VQqyp2B9VAOJD
+oiYZcNTPv4KTluvQ1N8RsZbZkVZvayTwGpvw9M8DPj4bW/GNEhy/A5GXKAX7+rn6
+afDCv6f8xtqm5JCfXmtYn6n6hJYzEH9pg/BdU00UP4bf8oxkqqR1HKFVQjLM8n1N
+jw5WHXW18eWZTT8iKPfI/4Oifhb3guiE9ndbLS3dyF+rjbmTjNoTgvqezCgNpEgN
+4nb+dTuTZe2pDkyNcwTdTW2zpQo6tcIjcKdZqhAZw2ZlW+0TSd3U5z+xprWycLBp
+q7XwuDh5MrKccxq/Jd1zaZnzrsRfRLrbveTsmTPAMVYbuWqi3lnlZGTOdN5BeA+C
+zmfwhgwwigLQzV7R8USaqyUcUXWnXQVg2SqIm5QF5imDkr6f0Pz2XpxYdAozay5k
+k84YObOibO7MyaKJOCqd9djYqwUbpni6mJ2RKZB6hUjsUfjwt93o6Tc6CxRkHi7H
+BKikwnrO
+=nXhX
+-----END PGP SIGNATURE-----

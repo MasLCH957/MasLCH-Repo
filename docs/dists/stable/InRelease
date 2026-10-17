@@ -9,7 +9,7 @@ Version: 1.0
 Architectures: iphoneos-arm64e
 Components: main
 Description: MasLCH957's personal jailbreak packages
-Date: Sat, 17 Oct 2026 12:07:21 GMT
+Date: Sat, 17 Oct 2026 12:15:07 GMT
 MD5Sum:
  16d2cd2db5392a91531f4a3b47f87e4b             1115 main/binary-iphoneos-arm64e/Packages
  2f954eeb4e05e1b07edcafa7f2989bd5              687 main/binary-iphoneos-arm64e/Packages.gz
@@ -22,15 +22,15 @@ SHA256:
 
 -----BEGIN PGP SIGNATURE-----
 
-wsDzBAEBCAAdBQJq02T5FiEEjfUFPLAiCYZCZUJefKIDz2cRCfMACgkQfKIDz2cR
-CfNkhAwAqNFQpIjcm+SEWbOFi83e6JyYuS6M+4B4ciTayTig7PMRTSsoHC3vorST
-+CAXbxsCHLeo5YRwcbJeBgcg5dBDQqZaau25n7RvZtuax2/ySMuXmsBnM5k3gSCa
-e+X/VeSzCKpCzFOB31JQIPoW2JH3MGJDCpcznRk4uxN3KouC21VLJghPfVv8hIzQ
-rf1V+B474n5PuVkhJHYP8YkMSlz32ZQR/Ey+N1U+u2ayh+RnL4Q5Eghqp+KWQM27
-vV2GbQEqybVYR5piEDM5468x1RkHcCzy+kXV7EkMGFiSKdqERdhehvXKzkVxF5YK
-eKWx6sLtZ2luOVX6VZn+iEGr+t9qrtjTZWbu5KgaALaaOzmz26qD/CfY+dZEn+ta
-ovsT7p9r/mvzs8S01CyqejM8lGfxItYgWEoch7IzPZoXAea1XEgDJ4Yc/4MsXyOR
-2Csw0LywbSL2dWZ5Lu/KCAOKLDAg5WFskXegdG+HOKeh9BrVaJzyiqHwazeBcY24
-nM1kGA7d
-=e63l
+wsDzBAEBCAAdBQJq02bLFiEEjfUFPLAiCYZCZUJefKIDz2cRCfMACgkQfKIDz2cR
+CfOFpgwAhPv/YnpMHxJfnpOTw00WjgqkibsY9FiwFgrvcNUVsVNLys4Lo8Fat+Hk
+GXdSh4rT7ckzClQZXxLhcgdTFgcbc7T48YCXuqvR4LzkOgiCx+RswQ9cuNytPSKj
+EohkocN9rouIbNqHiJA9VvkjSaz8PQx8p3MsfRVXHlDarstG2Re+jFlGNkhXl6VO
+mpeS88UxFg/G+QLeZvSjKgarcnvUnAjSgX2y7Rums5sGvoXM3gZnmzzOkXeOQitQ
+BcOQW7ZKp242UrVK2vj4q+kIjJiP0J18lFBwqp8AcHSt19zuSNSUejna50gkfvzQ
++INVmFvkvFubo2U4Z3Jah6r8nR9s1pFxJWAlcyL0x4IqtBi3GhjcRyWgBFHhkbhD
+kEAeByxkmxES1F+XH16ILd5+8ctJRIylOBR6At64nddxBlPUKzSUWwyYGa+olFs1
+P5oN03tI6pZIskEJYCNg5WPF3Xl9FaEP2hhQuKtoFf156etbVYLyIozl1FfcVk1X
+1V3qTo2U
+=a4DQ
 -----END PGP SIGNATURE-----
