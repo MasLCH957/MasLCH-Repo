@@ -12,19 +12,28 @@ https://maslch957.github.io/MasLCH-Repo/
 
 ## 添加源
 
-**Sileo**：`源` → `+` → 粘贴上面的地址 → 添加。
+**Sileo**：`源` → `+` → 粘贴上面的地址 → 添加。Sileo 会按 flat 布局去根目录取 `Release`，仓库已经同时提供了 flat 和 `dists/` 两套索引，粘贴 URL 即可。
 
-**命令行**：
+**命令行**（两种写法等价，任选其一）：
 
 ```sh
+# 1. 导入签名公钥
 curl -fsSL https://maslch957.github.io/MasLCH-Repo/key.asc \
   -o /etc/apt/trusted.gpg.d/maslch-repo.asc
 
+# 2a. flat 布局（与 Sileo 写入的格式一致）
+echo 'deb https://maslch957.github.io/MasLCH-Repo/ ./' \
+  > /etc/apt/sources.list.d/maslch-repo.list
+
+# 2b. 或者标准 dists 布局
 echo 'deb [signed-by=/etc/apt/trusted.gpg.d/maslch-repo.asc] https://maslch957.github.io/MasLCH-Repo/ stable main' \
   > /etc/apt/sources.list.d/maslch-repo.list
 
 apt update
 ```
+
+> 公钥放在 `/etc/apt/trusted.gpg.d/` 后即进入全局信任环，因此 2a 这种不带 `signed-by` 的写法同样会校验签名。
+> 注意不要同时写 2a 和 2b —— 同一个 URI 出现两次且 `Signed-By` 不一致时，apt 会报 `Conflicting values set for option Signed-By`。
 
 ## 包列表
 
@@ -43,10 +52,13 @@ MasLCH-Repo/
 ├── tools/
 │   └── build-repo.py        生成索引并签名
 └── docs/                    GitHub Pages 根目录 = APT 源本身
-    ├── dists/stable/        Release / InRelease / Packages
+    ├── Release, Packages    flat 布局（Sileo 粘贴 URL 时读这里）
+    ├── dists/stable/        标准 dists 布局（可选，等价内容）
     ├── pool/main/           .deb 存放位置
     └── key.gpg, key.asc     签名公钥
 ```
+
+两套布局由 `build-repo.py` 从同一个 `pool/` 同时生成：Sileo 添加纯 URL 时只认 flat（根目录的 `Release`），而标准 apt 客户端可以用 `stable main`。缺了 flat 那一套，Sileo 会报 `Release returned status 404`。
 
 ## 维护
 
