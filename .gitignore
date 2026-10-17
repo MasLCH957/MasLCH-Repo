@@ -1,5 +1,5 @@
 dist/
 *.deb
-!docs/*.deb
+!docs/**/*.deb
 .DS_Store
 Thumbs.db

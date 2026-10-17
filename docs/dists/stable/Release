@@ -1,0 +1,18 @@
+Origin: MasLCH957
+Label: MasLCH Repo
+Suite: stable
+Codename: ios
+Version: 1.0
+Architectures: iphoneos-arm64e
+Components: main
+Description: MasLCH957's personal jailbreak packages
+Date: Sat, 17 Oct 2026 12:07:21 GMT
+MD5Sum:
+ 16d2cd2db5392a91531f4a3b47f87e4b             1115 main/binary-iphoneos-arm64e/Packages
+ 2f954eeb4e05e1b07edcafa7f2989bd5              687 main/binary-iphoneos-arm64e/Packages.gz
+SHA1:
+ 8e89cce9fc5172fb08565a51377452a865cb2361             1115 main/binary-iphoneos-arm64e/Packages
+ 2a58feb563c710ef9aca18da098964d87e96075d              687 main/binary-iphoneos-arm64e/Packages.gz
+SHA256:
+ 6f7ca4fbf52d093b2a56094c2a5df0c3547609ab0877b654fc4f64050f939ef3             1115 main/binary-iphoneos-arm64e/Packages
+ f744e177e7433d8d9cd201b10eb773a25f5c7c65cbbff4b4882ade51214ccc28              687 main/binary-iphoneos-arm64e/Packages.gz

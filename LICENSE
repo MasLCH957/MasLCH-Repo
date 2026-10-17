@@ -22,8 +22,8 @@ SOFTWARE.
 
 ---
 
-This license covers the packaging scripts and launcher scripts in this
-repository (build.sh, debian/*, files/*).
+This license covers the repository tooling in `tools/`.
 
-The Node.js binary and the npm tree bundled in the release .deb are third-party
-software under their own licenses. See THIRD-PARTY-NOTICES.md.
+Packages under `projects/` carry their own LICENSE; third-party components
+bundled in release artifacts are attributed in each project's
+THIRD-PARTY-NOTICES.md.
