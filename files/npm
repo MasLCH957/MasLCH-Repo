@@ -1,0 +1,27 @@
+#!/bin/sh
+# npm launcher for roothide / rootless jailbreaks.
+#
+# Same jbroot resolution as the node launcher, plus:
+#   - npm_config_prefix / npm_config_cache / HOME are pinned to REAL paths,
+#     because npm (running inside node) resolves them against the real
+#     filesystem, not the virtualized one.
+
+NODE=/usr/local/lib/nodejs/node
+
+realof() { cd "$1" 2>/dev/null && "$NODE" -e 'process.stdout.write(process.cwd())' 2>/dev/null; }
+
+OWD=$PWD
+NODEDIR=$(realof /usr/local/lib/nodejs)
+NPMDIR=$(realof /usr/local/lib/nodejs/npm)
+PREFIX=$(realof /usr/local)
+HOMER=$(realof /var/root)
+cd "$OWD" 2>/dev/null
+
+[ -n "$NPMDIR" ] || { echo "npm: cannot resolve jbroot" >&2; exit 127; }
+[ -n "$HOMER" ] || HOMER=/tmp
+
+export npm_config_prefix="${PREFIX:-/usr/local}"
+export npm_config_cache="$HOMER/.npm"
+export HOME="$HOMER"
+
+exec "$NODEDIR/node" "$NPMDIR/bin/npm-cli.js" "$@"

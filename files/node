@@ -1,0 +1,19 @@
+#!/bin/sh
+# node launcher for roothide / rootless jailbreaks.
+#
+# roothide randomizes the jailbreak root (e.g. .jbroot-463D314638170B28),
+# and the node binary itself is NOT path-virtualized: it sees the real
+# filesystem, where /usr/local and /var/jb do not exist. So we ask node
+# for its own real cwd at "/" and derive the jbroot path from that.
+# This keeps working after re-jailbreaking, when the random suffix changes.
+
+NODE=/usr/local/lib/nodejs/node
+
+OWD=$PWD
+cd / 2>/dev/null
+ROOT=$("$NODE" -e 'process.stdout.write(process.cwd())' 2>/dev/null)
+cd "$OWD" 2>/dev/null
+
+[ -n "$ROOT" ] || { echo "node: cannot resolve jbroot" >&2; exit 127; }
+
+exec "$ROOT/.jbroot/usr/local/lib/nodejs/node" "$@"

@@ -1,0 +1,23 @@
+Package: com.maslch.nodejs-npm
+Name: Node.js + npm (roothide)
+Version: @VERSION@
+Architecture: iphoneos-arm64e
+Section: Development
+Priority: optional
+Maintainer: MasLCH957 <MasLCH957@users.noreply.github.com>
+Author: MasLCH957
+Depends: firmware (>= 15.0)
+Provides: nodejs, node, npm
+Conflicts: io.github.imcynic.nodejs
+Replaces: io.github.imcynic.nodejs
+Installed-Size: 91000
+Homepage: https://github.com/MasLCH957/nodejs-npm-roothide
+Description: Node.js 18.20.4 + npm 10.9.2 for Dopamine-roothide
+ Node.js runtime bundled with npm and npx, packaged for rootless and
+ roothide jailbreaks on iOS 15+.
+ .
+ The launchers resolve the randomized jbroot path at runtime, so they
+ keep working after re-jailbreaking without editing any script.
+ .
+ Repackaged from imcynic's Node.js 18 build. See THIRD-PARTY-NOTICES.md.
+Tag: purpose::console, role::developer

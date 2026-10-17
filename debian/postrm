@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+    rm -f /etc/profile.d/00-localbin.sh
+fi
+
+exit 0

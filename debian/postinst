@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+mkdir -p /etc/profile.d
+printf 'export PATH="/usr/local/bin:$PATH"\n' > /etc/profile.d/00-localbin.sh
+chmod 644 /etc/profile.d/00-localbin.sh
+
+chmod 755 /usr/local/bin/node /usr/local/bin/npm /usr/local/bin/npx 2>/dev/null || true
+
+exit 0

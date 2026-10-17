@@ -1,0 +1,4 @@
+dist/
+*.deb
+.DS_Store
+Thumbs.db
